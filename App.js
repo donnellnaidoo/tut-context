@@ -4,12 +4,15 @@ import AuthStack from "./navigation/AuthStack";
 import MainTab from "./navigation/MainTab";
 import { NavigationContainer } from "@react-navigation/native";
 import { UserProvider, useUser } from "./context/UserContext";
+import { CartProvider } from "./context/CartContext";
 
 export default function App() {
   return (
     <NavigationContainer>
       <UserProvider>
-        <RootNavigator />
+        <CartProvider>
+          <RootNavigator />
+        </CartProvider>
       </UserProvider>
     </NavigationContainer>
   );
